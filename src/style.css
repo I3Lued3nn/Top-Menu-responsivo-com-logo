@@ -1,0 +1,124 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: aliceblue;
+    font-family: "Open Sans", sans-serif;
+}
+header{
+    background-color: aliceblue;
+}
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.navbar{
+    min-height: 7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.navmenu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    z-index: 2;
+    margin-right: 10%;
+}
+
+.logotop{
+    margin-left: 10%;
+}
+
+.logotop img{
+    width: 10rem;
+    height: 3rem;
+}
+
+.nav-link{
+    transition: 0.7s ease-in-out;
+    font-size: 1.2rem;
+    color: rgb(255, 0, 0);
+    transition: 0.4s ease-in;
+    cursor: pointer;
+}
+
+.nav-link:hover{
+    color: black;
+}
+
+.Hamburguer{
+    display: none;
+    cursor: pointer;
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3 ease-in-out;
+    transition: all 0.3 ease-in-out;
+    background-color: rgb(22, 30, 36);
+}
+
+@media(max-width:768px){
+    .Hamburguer{
+        display: block;
+    }
+
+    .Hamburguer.active .bar:nth-child(2){
+        opacity: 0;
+
+    }
+
+    .Hamburguer.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+
+    }
+    
+    .Hamburguer.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+
+    }
+
+    .navmenu{
+        position: absolute;
+        right: -100%;
+        top: 110px;
+        gap: 0;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(2px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        margin-right: 0;
+        display: none;
+
+    }
+
+    .navmenu.active{
+        display: flex;
+    }
+
+    .nav-item{
+        margin: 16px 0;
+    }
+
+    .navmenu.active{
+        right: 0;
+    }
+}
